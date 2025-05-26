@@ -14,8 +14,10 @@
 
 ![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=adriantayeh&layout=compact&hide=html&theme=gruvbox)
 
-![Commits](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/adriantayeh/18d04ac8ef4b7bf7d6cff7598d33f3aa/raw/github-stats.json&label=Total%20Commits&query=$.commits&color=blue)
-![Public Repositories](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/adriantayeh/18d04ac8ef4b7bf7d6cff7598d33f3aa/raw/github-stats.json&label=Public%20Repos&query=$.repos&color=green)
+## 📈 GitHub Overview
+
+![Commits](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/adriantayeh/18d04ac8ef4b7bf7d6cff7598d33f3aa/raw/github-commits.json)
+![Public Repos](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/adriantayeh/18d04ac8ef4b7bf7d6cff7598d33f3aa/raw/github-repos.json)
 
 ## 📫 Let's Connect
 
