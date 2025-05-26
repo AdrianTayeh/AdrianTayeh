@@ -10,13 +10,14 @@
 ![Git](https://img.shields.io/badge/-Git-F05032?logo=git&logoColor=fff)
 ![Visual Studio Code](https://img.shields.io/badge/-VS_Code-007ACC?logo=visual-studio-code&logoColor=fff)
 
-## 📊 GitHub Stats
+## 🧑‍💻 Languages I Use Most
 
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=adriantayeh&show_icons=true&theme=radical" width="48%" />
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=adriantayeh&theme=radical" width="48%" />
-</p>
+![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=adriantayeh&layout=compact&hide=html&theme=gruvbox)
 
+## 📈 GitHub Overview
+
+![Commits](https://img.shields.io/badge/Total%20Commits-1250+-blue?style=flat-square&logo=github)
+![Public Repositories](https://img.shields.io/badge/Public%20Repos-14-green?style=flat-square&logo=github)
 ## 📫 Let's Connect
 
 - 💼 [LinkedIn](https://www.linkedin.com/in/adrian-tayeh/)
