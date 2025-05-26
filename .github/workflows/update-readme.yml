@@ -53,12 +53,22 @@ jobs:
 
             const gistUpdate = {
               files: {
-                "github-stats.json": {
+                "github-commits.json": {
                   content: JSON.stringify({
-                    commits: totalCommits,
-                    repos: totalRepos
+                    schemaVersion: 1,
+                    label: "Total Commits",
+                    message: String(totalCommits),
+                    color: "blue"
                   }, null, 2)
-                }
+                },
+                "github-repos.json": {
+                  content: JSON.stringify({
+                    schemaVersion: 1,
+                    label: "Public Repos",
+                    message: String(totalRepos),
+                    color: "green"
+                }, null, 2)
+              }
               }
             };
 
