@@ -1,0 +1,73 @@
+name: Update GitHub Stats Badges
+
+on:
+  schedule:
+    - cron: '0 0 * * *' # Runs every day at midnight
+  workflow_dispatch:
+
+jobs:
+  update-stats:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install axios
+        run: npm install axios
+
+      - name: Update Gist
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          GIST_ID: your_gist_id_here
+          GITHUB_USERNAME: adriantayeh
+        run: |
+          node <<EOF
+          const axios = require('axios');
+
+          async function main() {
+            const headers = {
+              Authorization: 'token ' + process.env.GH_TOKEN,
+              'User-Agent': 'github-readme-stats'
+            };
+
+            const [user, events] = await Promise.all([
+              axios.get(`https://api.github.com/users/${process.env.GITHUB_USERNAME}`, { headers }),
+              axios.get(`https://api.github.com/users/${process.env.GITHUB_USERNAME}/events/public`, { headers })
+            ]);
+
+            const totalRepos = user.data.public_repos;
+
+            const commitsRes = await axios.get(`https://api.github.com/search/commits?q=author:${process.env.GITHUB_USERNAME}`, {
+              headers: {
+                ...headers,
+                Accept: 'application/vnd.github.cloak-preview'
+              }
+            });
+            const totalCommits = commitsRes.data.total_count;
+
+            const gistUpdate = {
+              files: {
+                "github-stats.json": {
+                  content: JSON.stringify({
+                    commits: totalCommits,
+                    repos: totalRepos
+                  }, null, 2)
+                }
+              }
+            };
+
+            await axios.patch(`https://api.github.com/gists/${process.env.GIST_ID}`, gistUpdate, { headers });
+            console.log('Gist updated');
+          }
+
+          main().catch(err => {
+            console.error(err);
+            process.exit(1);
+          });
+          EOF
