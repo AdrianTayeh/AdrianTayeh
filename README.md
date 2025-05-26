@@ -14,10 +14,9 @@
 
 ![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=adriantayeh&layout=compact&hide=html&theme=gruvbox)
 
-## 📈 GitHub Overview
+![Commits](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/adriantayeh/18d04ac8ef4b7bf7d6cff7598d33f3aa/raw/github-stats.json&label=Total%20Commits&query=$.commits&color=blue)
+![Public Repositories](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/adriantayeh/18d04ac8ef4b7bf7d6cff7598d33f3aa/raw/github-stats.json&label=Public%20Repos&query=$.repos&color=green)
 
-![Commits](https://img.shields.io/badge/Total%20Commits-1250+-blue?style=flat-square&logo=github)
-![Public Repositories](https://img.shields.io/badge/Public%20Repos-14-green?style=flat-square&logo=github)
 ## 📫 Let's Connect
 
 - 💼 [LinkedIn](https://www.linkedin.com/in/adrian-tayeh/)
