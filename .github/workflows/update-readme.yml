@@ -1,9 +1,9 @@
 name: Update GitHub Stats Badges
 
 on:
-  schedule:
-    - cron: '0 0 * * *' # Runs every day at midnight
   workflow_dispatch:
+  schedule:
+    - cron: '0 0 * * *'  # Run every day at midnight UTC
 
 jobs:
   update-stats:
@@ -18,14 +18,14 @@ jobs:
         with:
           node-version: '18'
 
-      - name: Install axios
+      - name: Install dependencies
         run: npm install axios
 
-      - name: Update Gist
+      - name: Update Gist with GitHub Stats
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
-          GIST_ID: your_gist_id_here
           GITHUB_USERNAME: adriantayeh
+          GIST_ID: YOUR_GIST_ID_HERE
         run: |
           node <<EOF
           const axios = require('axios');
@@ -33,23 +33,24 @@ jobs:
           async function main() {
             const headers = {
               Authorization: 'token ' + process.env.GH_TOKEN,
-              'User-Agent': 'github-readme-stats'
+              'User-Agent': 'GitHub Stats Updater',
+              Accept: 'application/vnd.github.v3+json'
             };
 
-            const [user, events] = await Promise.all([
-              axios.get(`https://api.github.com/users/${process.env.GITHUB_USERNAME}`, { headers }),
-              axios.get(`https://api.github.com/users/${process.env.GITHUB_USERNAME}/events/public`, { headers })
-            ]);
-
+            // Get public repo count
+            const user = await axios.get(
+              \`https://api.github.com/users/\${process.env.GITHUB_USERNAME}\`,
+              { headers }
+            );
             const totalRepos = user.data.public_repos;
 
-            const commitsRes = await axios.get(`https://api.github.com/search/commits?q=author:${process.env.GITHUB_USERNAME}`, {
-              headers: {
-                ...headers,
-                Accept: 'application/vnd.github.cloak-preview'
-              }
-            });
-            const totalCommits = commitsRes.data.total_count;
+            // Get total commits via events (approximate)
+            const events = await axios.get(
+              \`https://api.github.com/users/\${process.env.GITHUB_USERNAME}/events/public\`,
+              { headers }
+            );
+            const pushEvents = events.data.filter(e => e.type === 'PushEvent');
+            const recentCommits = pushEvents.reduce((sum, e) => sum + e.payload.commits.length, 0);
 
             const gistUpdate = {
               files: {
@@ -57,7 +58,7 @@ jobs:
                   content: JSON.stringify({
                     schemaVersion: 1,
                     label: "Total Commits",
-                    message: String(totalCommits),
+                    message: String(recentCommits),
                     color: "blue"
                   }, null, 2)
                 },
@@ -67,17 +68,17 @@ jobs:
                     label: "Public Repos",
                     message: String(totalRepos),
                     color: "green"
-                }, null, 2)
-              }
+                  }, null, 2)
+                }
               }
             };
 
-            await axios.patch(`https://api.github.com/gists/${process.env.GIST_ID}`, gistUpdate, { headers });
-            console.log('Gist updated');
+            await axios.patch(\`https://api.github.com/gists/\${process.env.GIST_ID}\`, gistUpdate, { headers });
+            console.log("✅ Gist updated!");
           }
 
           main().catch(err => {
-            console.error(err);
+            console.error("❌ Error updating Gist:", err);
             process.exit(1);
           });
           EOF
