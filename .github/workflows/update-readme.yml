@@ -25,7 +25,7 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
           GITHUB_USERNAME: adriantayeh
-          GIST_ID: YOUR_GIST_ID_HERE
+          GIST_ID: 18d04ac8ef4b7bf7d6cff7598d33f3aa
         run: |
           node <<EOF
           const axios = require('axios');
