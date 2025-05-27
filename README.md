@@ -24,4 +24,4 @@
 ## 📫 Let's Connect
 
 - 💼 [LinkedIn](https://www.linkedin.com/in/adrian-tayeh/)
-- 🧪 [My Portfolio (coming soon)]()
+- 🧪 [My Portfolio](https://adrian-tayeh.netlify.app/)
