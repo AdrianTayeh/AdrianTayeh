@@ -12,6 +12,7 @@
 ![MySQL](https://img.shields.io/badge/MySQL-00758F?logo=mysql&logoColor=white)
 ![Firebase](https://img.shields.io/badge/Firebase-FFCA28?logo=firebase&logoColor=black)
 ![GraphQL](https://img.shields.io/badge/GraphQL-E10098?logo=graphql&logoColor=white)
+[![Next.js](https://img.shields.io/badge/Next.js-black?logo=next.js&logoColor=white)](#)
 
 ## 🧑‍💻 Languages I Use Most
 
@@ -24,5 +25,5 @@
 
 ## 📫 Let's Connect
 
-- 💼 [LinkedIn](https://www.linkedin.com/in/adrian-tayeh/)
+- 💼 [LinkedIn](https://www.linkedin.com/in/adrian-tayeh/)_
 - 🧪 [My Portfolio](https://portfolio-mu-one-47.vercel.app/)
