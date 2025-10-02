@@ -29,5 +29,5 @@
 
 ## 📫 Let's Connect
 
-- 💼 [LinkedIn](https://www.linkedin.com/in/adrian-tayeh/)_
+- 💼 [LinkedIn](https://www.linkedin.com/in/adrian-tayeh/)
 - 🧪 [My Portfolio](https://portfolio-mu-one-47.vercel.app/)
