@@ -18,15 +18,6 @@
 [![Postgres](https://img.shields.io/badge/Postgres-%23316192.svg?logo=postgresql&logoColor=white)](#)
 [![shadcn/ui](https://img.shields.io/badge/shadcn%2Fui-000?logo=shadcnui&logoColor=fff)](#)
 
-## 🧑‍💻 Languages I Use Most
-
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=adriantayeh&layout=compact&hide=html&theme=gruvbox)
-
-## 📈 GitHub Overview
-
-![Commits](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/adriantayeh/18d04ac8ef4b7bf7d6cff7598d33f3aa/raw/github-commits.json)
-![Public Repos](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/adriantayeh/18d04ac8ef4b7bf7d6cff7598d33f3aa/raw/github-repos.json)
-
 ## 📫 Let's Connect
 
 - 💼 [LinkedIn](https://www.linkedin.com/in/adrian-tayeh/)
